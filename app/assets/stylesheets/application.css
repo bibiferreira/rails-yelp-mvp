@@ -13,3 +13,16 @@
  *= require_tree .
  *= require_self
  */
+
+label, select {
+  display: block;
+}
+
+.container {
+  width: 600px;
+  margin: 0 auto;
+}
+
+form btn {
+  margin-top: 20px;;
+}

@@ -1,0 +1,20 @@
+<!-- app/views/layouts/application.html.erb -->
+
+<h2><%= @restaurant.name.capitalize %></h2>
+<i><%= @restaurant.category %></i>
+
+<p>Phone: <%= link_to @restaurant.phone_number, "tel:#{@restaurant.phone_number}" %></p>
+
+<p>Address: <%= @restaurant.address %></p>
+
+<%= link_to "Add review", new_restaurant_review_path(@restaurant) %>
+<ul>
+<% @restaurant.reviews.each do |review| %>
+  <li>
+    <p>rating: <%= review.rating %></p>
+    <p><%= review.content %></p>
+  </li>
+<% end %>
+</ul>
+
+<%= link_to "go back", restaurants_path %>

@@ -1,0 +1,13 @@
+<!-- app/views/layouts/application.html.erb -->
+
+<p>Add your own review with location and ratings</p>
+
+<%= link_to "add new", new_restaurant_path, class: "btn btn-primary" %>
+
+<ul>
+<% @restaurants.each do |restaurant| %>
+  <li>
+    <%= link_to restaurant.name.capitalize, restaurant_path(restaurant) %> - <%= restaurant.reviews.count %> review(s)
+  </li>
+<% end %>
+</ul>

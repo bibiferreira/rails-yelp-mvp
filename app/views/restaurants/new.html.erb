@@ -1,0 +1,18 @@
+<!-- app/views/layouts/application.html.erb -->
+
+<%= form_with model: @restaurant do |form| %>
+  <%= form.label :name, "Name" %>
+  <%= form.text_field :name %>
+
+  <%= form.label :address, "Address" %>
+  <%= form.text_field :address %>
+
+  <%= form.label :phone_number, "Phone" %>
+  <%= form.telephone_field :phone_number %>
+
+  <%= form.label :category, "Category" %>
+  <%= form.select :category, @categories %>
+
+  <br>
+  <%= form.submit "Create", class: "btn" %>
+<% end %>

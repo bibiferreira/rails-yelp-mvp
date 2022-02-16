@@ -1,0 +1,14 @@
+<!-- app/views/layouts/application.html.erb -->
+
+<h2>What's your review of <%= @review.restaurant.name.capitalize %>?</h2>
+
+<%= form_with model: @review, url: restaurant_reviews_path(@review.restaurant) do |form| %>
+  <%= form.label :rating, "Rating" %>
+  <%= form.number_field :rating, in: 0..5, step: 1 %>
+
+  <%= form.label :content, "Your review" %>
+  <%= form.text_area :content %>
+
+  <br>
+  <%= form.submit "Create", class: "btn" %>
+<% end %>
